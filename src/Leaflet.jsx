@@ -1,7 +1,12 @@
 import 'leaflet/dist/leaflet.css'
 import { divIcon } from "leaflet"
-import { MapContainer, TileLayer, Marker } from "react-leaflet"
+import { MapContainer, TileLayer, Marker, Tooltip } from "react-leaflet"
 import L from 'leaflet'
+import internetServiceProvider from './ispData.json';
+import Legend from './Legend'
+import MarketShareComponent from './MarketShareComponent';
+
+
 
 // Fix untuk default marker icon
 import icon from 'leaflet/dist/images/marker-icon.png'
@@ -18,36 +23,6 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon
 
-const providers = [
-    { 
-        name: "ICONNET", 
-        color: "#bbcf82", // Blue
-        locations: [
-            [0.133505, 103.447403],
-            [0.633505, 99.547403],
-            [-1.33505, 101.347403]
-        ]
-    },
-    { 
-        name: "FirstMedia", 
-        color: "#d46b60ff", // Red
-        locations: [
-            [-5.3971, 105.2668],
-            [-5.4971, 104.3668],
-            [-5.0971, 105.3668]
-        ]
-    },
-    { 
-        name: "BiznetHome", 
-        color: "#c39f65ff", // Orange
-        locations: [
-            [3.5483, 97.3238],
-            [5.1183, 96.4238],
-            [5.4483, 95.2238]
-        ]
-    }
-]
-
 const createCustomIcon = (color) => {
     return divIcon({
         html: `
@@ -59,28 +34,51 @@ const createCustomIcon = (color) => {
     })
 }
 
+function App() {
+    return (
+      <div>
+        <h1 className="text-center text-xl font-bold">My Chart</h1>
+        <MarketShareComponent />
+      </div>
+    );
+  }
+
 function Map() {
     return (
-        <MapContainer
+        <div style={{ position: 'relative' }}> 
+            <MapContainer
             center={[-5.0, 120.0]}
             zoom={5}
             scrollWheelZoom={true}
             style={{ height: "100vh", width: "100%" }}
-        >
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-                url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
-            />
-            {providers.flatMap((provider) => 
-                provider.locations.map((location, locationIndex) => (
-                    <Marker 
-                        key={`${provider.name}-${locationIndex}`}
-                        position={location} 
-                        icon={createCustomIcon(provider.color)} 
-                    />
-                ))
-            )}
-        </MapContainer>
+            >
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                    url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
+                />
+                {internetServiceProvider.flatMap((provider) =>
+                    provider.locations.map((location, locationIndex) => (
+                        <Marker 
+                            key={`${provider.name}-${locationIndex}`}
+                            position={location} 
+                            icon={createCustomIcon(provider.color)} 
+                        >
+                            <Tooltip className="text-center">
+                                <div className="font-extrabold text-align-center"> 
+                                    {provider.name}
+                                </div>
+                                <div>
+                                    {location.city}
+                                </div>
+                            </Tooltip>
+                        </Marker>
+                    ))
+                )}
+            </MapContainer>
+            <Legend />
+        </div>
+        
+        
     )
 }
 
