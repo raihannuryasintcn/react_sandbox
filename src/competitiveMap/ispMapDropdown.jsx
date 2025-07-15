@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { Button } from '@mantine/core';
+import { IconSelector } from '@tabler/icons-react';
+
+
 
 export default function IspMapDropdown({ providers, selected, setSelected }) {
   const [open, setOpen] = useState(false);
@@ -11,17 +15,25 @@ export default function IspMapDropdown({ providers, selected, setSelected }) {
     }
   };
 
+  const selectAll = () => setSelected(providers.map((p) => p.name));
+  const deselectAll = () => setSelected([]);
+
   return (
     <div className="absolute top-2 left-[50px] bg-white border-2 border-gray-300 rounded-md z-[1000] w-[150px]">
       <button
-        className="w-full p-1 text-left cursor-pointer hover:bg-gray-100"
+        className="w-full p-1 text-left cursor-pointer hover:bg-gray-100 flex justify-between items-center"
         onClick={() => setOpen(!open)}
       >
-        {open ? "Tutup" : "Pilih ISP"}
+        <span>{open ? "Tutup" : "Pilih ISP"}</span>
+        <IconSelector />
       </button>
 
       {open && (
         <div className="">
+          <div className="border-y-2 border-gray-300 p-1 flex flex-row gap-2">
+            <Button className="flex-1" variant="filled" size="xs" onClick={selectAll}>All</Button>
+            <Button className="flex-1" variant="filled" color="gray" size="xs" onClick={deselectAll}>None</Button>
+          </div>
           {providers.map((p) => (
             <label
               key={p.name}

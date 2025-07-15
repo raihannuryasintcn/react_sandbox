@@ -16,7 +16,7 @@ function Legend({providers}) {
 
             {providers.map((p) => (
                 <div key={p.name} className="flex items-center">
-                    <div className={`w-3 h-3 rounded-full mr-2 bg-${p.color}`} />
+                    <div className={`w-3 h-3 rounded-full mr-2 bg-${p.color} border border-gray-800`} />
                     <span>{p.name}</span>
                 </div>
             ))}

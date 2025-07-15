@@ -24,10 +24,9 @@ function pieChart() {
 
 const createCustomIcon = (color) => {
     return divIcon({
-        /* ----------------- PENTINGG pakein tailwind css untuk bg color ini ----------------- */
         html: `
             <div
-                class="bg-${color} w-[35px] h-[35px] rounded-full border-[2px] border-gray-800"
+                class="bg-${color} w-[35px] h-[35px] rounded-full border border-gray-800"
             />
         `,
         className: 'custom-div-icon',
