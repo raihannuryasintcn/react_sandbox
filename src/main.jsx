@@ -10,7 +10,6 @@ import { MantineProvider } from '@mantine/core';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <MantineProvider>
-
       <Map />
     </MantineProvider>
   </StrictMode>,

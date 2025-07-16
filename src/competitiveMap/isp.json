@@ -2,6 +2,8 @@
   {
     "name": "ICONNET",
     "color": "emerald-200",
+    "percentage": "2.7",
+    
     "locations": [
       { "city": "Balikpapan", "lat": -1.26916, "lng": 116.82526, "district": "Kalimantan", "province": "Kalimantan Timur", "territory": 6, "cityPriority": 1 },
       { "city": "Pekanbaru", "lat": 0.533505, "lng": 101.447403, "district": "Sumatera Tengah", "province": "Riau", "territory": 2, "cityPriority": 1 },
@@ -12,6 +14,7 @@
   {
     "name": "First Media",
     "color": "orange-200",
+    "percentage": "3.2",
     "locations": [
       { "city": "Surabaya", "lat": -7.2575, "lng": 112.7521, "district": "Jawa Timur", "province": "Jawa Timur", "territory": 3, "cityPriority": 1 },
       { "city": "Semarang", "lat": -7.0051, "lng": 110.4381, "district": "Jawa Tengah", "province": "Jawa Tengah", "territory": 3, "cityPriority": 1 },
@@ -22,6 +25,7 @@
   {
     "name": "Biznet Home",
     "color": "violet-300",
+    "percentage": "2.3",
     "locations": [
       { "city": "Aceh", "lat": 5.5483, "lng": 95.3238, "district": "Sumatera Utara", "province": "Aceh", "territory": 1, "cityPriority": 1 },
       { "city": "Riau", "lat": 0.2933, "lng": 101.7068, "district": "Sumatera Tengah", "province": "Riau", "territory": 2, "cityPriority": 2 },
@@ -37,6 +41,7 @@
   {
     "name": "CBN Fiber",
     "color": "fuchsia-300",
+    "percentage": "1.5",
     "locations": [
       { "city": "Jakarta", "lat": -6.2088, "lng": 106.8456, "district": "Jabodetabek", "province": "DKI Jakarta", "territory": 4, "cityPriority": 1 },
       { "city": "Bogor", "lat": -6.595, "lng": 106.8166, "district": "Jabodetabek", "province": "Jawa Barat", "territory": 4, "cityPriority": 1 },
@@ -52,6 +57,7 @@
   {
     "name": "Indosat Hifi",
     "color": "blue-300",
+    "percentage": "",
     "locations": [
       { "city": "Aceh", "lat": 5.5483, "lng": 95.3238, "district": "Sumatera Utara", "province": "Aceh", "territory": 1, "cityPriority": 1 },
       { "city": "Medan", "lat": 3.5952, "lng": 98.6722, "district": "Sumatera Utara", "province": "Sumatera Utara", "territory": 1, "cityPriority": 1 },
@@ -70,6 +76,7 @@
   {
     "name": "MNC Play",
     "color": "red-300",
+    "percentage": "",
     "locations": [
       { "city": "Jakarta", "lat": -6.2088, "lng": 106.8456, "district": "Jabodetabek", "province": "DKI Jakarta", "territory": 4, "cityPriority": 1 },
       { "city": "Bogor", "lat": -6.595, "lng": 106.8166, "district": "Jabodetabek", "province": "Jawa Barat", "territory": 4, "cityPriority": 1 },
@@ -85,6 +92,7 @@
   {
     "name": "My Republic",
     "color": "zinc-300",
+    "percentage": "",
     "locations": [
       { "city": "Surabaya", "lat": -7.2575, "lng": 112.7521, "district": "Jawa Timur", "province": "Jawa Timur", "territory": 3, "cityPriority": 1 },
       { "city": "Malang", "lat": -7.9797, "lng": 112.6304, "district": "Jawa Timur", "province": "Jawa Timur", "territory": 3, "cityPriority": 1 },
@@ -99,6 +107,7 @@
   {
     "name": "Oxygen.id",
     "color": "indigo-300",
+    "percentage": "",
     "locations": [
       { "city": "Jakarta", "lat": -6.2088, "lng": 106.8456, "district": "Jabodetabek", "province": "DKI Jakarta", "territory": 4, "cityPriority": 1 },
       { "city": "Bali", "lat": -8.4095, "lng": 115.1889, "district": "Bali", "province": "Bali", "territory": 5, "cityPriority": 1 },
@@ -111,6 +120,7 @@
   {
     "name": "XL Satu",
     "color": "amber-200",
+    "percentage": "",
     "locations": [
       { "city": "Makassar", "lat": -5.1477, "lng": 119.4327, "district": "Sulawesi", "province": "Sulawesi Selatan", "territory": 7, "cityPriority": 1 },
       { "city": "Gorontalo", "lat": 0.5375, "lng": 123.0636, "district": "Sulawesi", "province": "Gorontalo", "territory": 7, "cityPriority": 2 },
