@@ -26,7 +26,7 @@ const createCustomIcon = (color) => {
     return divIcon({
         html: `
             <div
-                class="bg-${color} w-[35px] h-[35px] rounded-full border border-gray-800"
+                class="bg-${color} w-[30px] h-[30px] rounded-full border border-gray-800"
             />
         `,
         className: 'custom-div-icon',
