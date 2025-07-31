@@ -1,0 +1,65 @@
+{
+  "Dashboard": [
+    {
+      "title": "Home",
+      "icon": "Home",
+      "path": "/"
+    },
+    {
+      "title": "TR1",
+      "icon": "BarChart3",
+      "path": "/tr1"
+    },
+    {
+      "title": "TR2",
+      "icon": "BarChart3",
+      "path": "/tr2"
+    },
+    {
+      "title": "TR3",
+      "icon": "BarChart3",
+      "path": "/tr3"
+    },
+    {
+      "title": "TR4",
+      "icon": "BarChart3",
+      "path": "/tr4"
+    }
+  ],
+  "Funnel": [
+    {
+      "title": "Funnel",
+      "icon": "Filter",
+      "path": "/funnel"
+    },
+    {
+      "title": "Funnel Description",
+      "icon": "FileText",
+      "path": "/funnel-desc"
+    }
+  ],
+  "Other Tools": [
+    {
+      "title": "List ISP",
+      "icon": "Wifi",
+      "path": "/list-isp"
+    },
+    {
+      "title": "Download",
+      "icon": "Download",
+      "path": "/download"
+    }
+  ],
+  "Admin Panel": [
+    {
+      "title": "Manage Users",
+      "icon": "Users",
+      "path": "/manage-users"
+    },
+    {
+      "title": "Activity Logs",
+      "icon": "Activity",
+      "path": "/activity-logs"
+    }
+  ]
+}
