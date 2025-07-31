@@ -12,7 +12,7 @@ import { MapContainer, TileLayer, Marker, Tooltip } from "react-leaflet"
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 import 'leaflet.markercluster/dist/MarkerCluster.css';         // transisi cluster
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css'; // gaya cluster default
-import Legend from "./Legend";
+import Legend from "./legend";
 
 
 function pieChart() {

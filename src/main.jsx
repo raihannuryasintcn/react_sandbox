@@ -5,12 +5,13 @@ import Map from './competitiveMap/Leaflet.jsx'
 
 import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
+import FunnelStatus from './salesFunnel/Funnel.jsx';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <MantineProvider>
-      <Map />
+      <FunnelStatus />
     </MantineProvider>
   </StrictMode>,
 )
