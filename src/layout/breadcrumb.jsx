@@ -8,10 +8,6 @@ const Breadcrumb = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   
-  // Untuk Next.js gunakan ini:
-  // const router = useRouter();
-  // const currentPath = router.pathname;
-
   // Fungsi untuk mendapatkan breadcrumb berdasarkan path saat ini
   const getBreadcrumb = (path) => {
     const breadcrumb = [{ title: 'Home', path: '/' }];

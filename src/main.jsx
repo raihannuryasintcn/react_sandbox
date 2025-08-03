@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <div className="flex">
           <Sidebar />
-          <main className="flex-1">
+          <main className="flex-1 bg-gray-100">
             <Breadcrumb />
             <App />
           </main>

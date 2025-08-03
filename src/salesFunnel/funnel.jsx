@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import funnelData from './funnel.json';
 import { Button } from '@mantine/core';
-import FunnelChart from './funnelChart';
-import StatusModal from './StatusModal';
+import FunnelChart from './FunnelChart';
+import StatusModal from './statusModal';
 
 
 
