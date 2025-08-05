@@ -7,10 +7,12 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './app';
 import Sidebar from './layout/sidebar';
 import Breadcrumb from './layout/breadcrumb';
+import { ToastContainer } from 'react-toastify';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <ToastContainer />
     <MantineProvider>
       <BrowserRouter>
         <div className="flex">

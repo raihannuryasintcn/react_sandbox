@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Download } from "lucide-react"
 import { jsPDF } from "jspdf"
+import { toast } from 'react-toastify';
 
 interface Task {
     id: number;
@@ -8,11 +9,13 @@ interface Task {
     is_completed: boolean;
 }
 
-const fetchPage = () => {
+const Tasks = () => {
     const [tasks, setTasks] = useState<Task[]>([])
     const [loading, setLoading] = useState(false)
+    const [addingTask, setAddingTask] = useState(false)
 
-    function handleClick() {
+
+    function fetchTask() {
         setLoading(true)
         setTasks([])
         setTimeout(() => {
@@ -22,20 +25,31 @@ const fetchPage = () => {
                     setTasks(data)
                     setLoading(false)
                 })
-                .then(() => console.log(tasks))
                 .catch((err) => {
-                    alert("Fetch Failed!")
+                    toast.error("Fetch Failed!");
                     setLoading(false)
                 })
         }, 500)
     }
 
+    function addTask() {
+        setLoading(true)
+        setAddingTask(true)
+        setTimeout(() => setLoading(false), 500)
+
+    }
+
+    function onClose() {
+        setAddingTask(false)
+    }
+
+
     const stringTasks: string = JSON.stringify(tasks, null, 2);
 
-    function copyToClipboard(text:string) {
+    function copyToClipboard(text: string) {
         navigator.clipboard.writeText(text)
-            .then(() => alert("Copied to clipboard!"))
-            .catch(() => alert("Failed to copy!"))
+            .then(() => toast.success("Copied to clipboard!"))
+            .catch(() => toast.error("Failed to copy!"))
     }
 
     function downloadPdf() {
@@ -57,16 +71,57 @@ const fetchPage = () => {
         doc.save("tugas.pdf");
     }
 
+    function completeTask() {
+
+    }
+
+    function renameTask() {
+
+    }
+
+    function deleteTask() {
+
+    }
+
+    const ranks = ["Officer", "Sergeant", "Lieutenant", "General"]
+
+    const menRanks = ranks.map(r => "Mr." + r)
+
+    console.log(menRanks)
 
     return (
-        <div className="flex min-h-screen items-center justify-center">
+        <div className="flex min-h-screen items-center justify-center p-4">
             <div className="flex flex-col bg-white py-8 px-10 rounded border border-gray-300 max-w-xl w-full gap-4">
-                <h1 className="text-gray-800 text-2xl font-semibold">Fetch Tugas!</h1>
-                <button
-                    className=" w-fit bg-blue-500 text-white py-2 px-4 rounded cursor-pointer hover:bg-blue-600"
-                    onClick={() => handleClick()}
-                >Test
-                </button>
+                <h1 className="text-gray-800 text-2xl font-semibold">Tugas</h1>
+                <div className="flex gap-2">
+                    <button
+                        className=" w-fit bg-blue-500 text-white py-2 px-4 rounded cursor-pointer hover:bg-blue-600"
+                        onClick={() => fetchTask()}
+                    >Ambil data
+                    </button>
+                    {tasks.length > 0 &&
+                        <button
+                            className=" w-fit bg-orange-500 text-white py-2 px-4 rounded cursor-pointer hover:bg-orange-600"
+                            onClick={() => addTask()}
+                        >Tambah tugas
+                        </button>
+                    }
+                </div>
+
+                {addingTask && (
+                    <div className="fixed inset-0 backdrop-blur-sm bg-opacity-40 flex justify-center items-center z-50">
+                        <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg relative p-6 border border-gray-300">
+                            <button
+                                onClick={onClose}
+                                className="absolute top-2 right-3 text-gray-500 hover:text-red-500 text-2xl cursor-pointer"
+                            >
+                                &times;
+                            </button>
+                            <h2 className="text-lg mb-3 font-semibold text-gray-800">
+                                Tambah Tugas
+                            </h2>
+                        </div>
+                    </div>)}
 
                 {loading && (
                     <div className="fixed    inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -104,7 +159,21 @@ const fetchPage = () => {
                     <ol className="list-inside text-left bg-orange-100 p-4 rounded text-sm">Versi list:
                         {tasks.map((task, index) => (
                             <li className={`${!task.is_completed ? 'bg-red-300' : 'bg-green-300'}`} key={index}>
-                                {index + 1}. {task.title}
+                                <div className="flex justify-between">
+                                    {index + 1}. {task.title}
+                                    <div className="flex text-xs gap-1">
+                                        <button
+                                            onClick={() => completeTask()}
+                                            className='cursor-pointer text-gray-800 hover:text-blue-600'>DONE</button>
+                                        <button
+                                            onClick={() => renameTask()}
+                                            className='cursor-pointer text-gray-800 hover:text-yellow-600'>RNM  </button>
+                                        <button
+                                            onClick={() => deleteTask()}
+                                            className='cursor-pointer text-gray-800 hover:text-red-700'>DLT</button>
+                                    </div>
+                                </div>
+
                             </li>
                         ))}
                     </ol>}
@@ -113,4 +182,4 @@ const fetchPage = () => {
     )
 }
 
-export default fetchPage;
+export default Tasks;

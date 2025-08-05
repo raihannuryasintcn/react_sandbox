@@ -4,8 +4,6 @@ import { Button } from '@mantine/core';
 import FunnelChart from './funnelChart';
 import StatusModal from './StatusModal';
 
-
-
 const FunnelStatus = () => {
     const [selectedStatus, setSelectedStatus] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');

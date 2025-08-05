@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 import sidebarData from './routes.json'; // Assuming sidebarData is in JSON format
 
 const Sidebar = () => {
-    const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(true);
     const [expandedSections, setExpandedSections] = useState({
         'Dashboard': true,
         'Funnel': false,
